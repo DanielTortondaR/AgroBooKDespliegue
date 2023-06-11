@@ -77,9 +77,10 @@ public class FaenaServicios {
         return faenas.faenasPorTrabajo(idTrabajo);
     }
 	
+	
 	public Optional<Faena> addNewFaena(Faena newFaena){
         
-		Optional<List<Faena>> comprobacion = listaFaenasPropietario(newFaena.getAlacance());
+		Optional<List<Faena>> comprobacion = faenas.faenasPorExplotacion(newFaena.getAlacance());
         
 		if(!comprobacion.isEmpty()) {
 			for (Faena faena : comprobacion.get()) {

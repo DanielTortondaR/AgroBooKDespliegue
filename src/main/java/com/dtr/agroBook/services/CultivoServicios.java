@@ -74,7 +74,7 @@ public class CultivoServicios {
 	
 	public Optional<Cultivo> addNewCultivo(Cultivo newCultivo, int prop){
         
-		Optional<List<Cultivo>> comprobacion = listaCultivosPropietario(prop);
+		Optional<List<Cultivo>> comprobacion = cultivos.cultivosPorExplotacion(prop);
         
 		if(!comprobacion.isEmpty()) {
 			for (Cultivo cultivo : comprobacion.get()) {
