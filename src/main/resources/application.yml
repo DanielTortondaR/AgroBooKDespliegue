@@ -1,0 +1,26 @@
+server:
+    port: 8080
+    servlet:
+      context-path: /AgroBook
+    error:
+      include-stacktrace: never
+      include-message: always
+spring:
+  datasource:
+    url: jdbc:mysql://containers-us-west-161.railway.app:6810/railway
+    username: root                   #AgroBookUser #root
+    password: c40VdUJDy57lOp9PtXMr            #AgroBookUser #D14t03r1996
+    driverClassName: com.mysql.cj.jdbc.Driver 
+  jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect
+    show-sql: false
+    generate-ddl: true
+    hibernate: 
+     ddl-auto: create
+  security:
+    user:
+      name: AgroBookUser
+      password: AgroBook
+            
+#update
+#create-drop
