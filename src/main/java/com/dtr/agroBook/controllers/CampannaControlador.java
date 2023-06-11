@@ -27,7 +27,7 @@ import com.dtr.agroBook.services.CampannaServicios;
  *
  */
 @RestController
-@CrossOrigin(origins="http://localhost:4200")
+@CrossOrigin(origins="https://agrobook-f959a.web.app")
 @RequestMapping("/campanna")
 public class CampannaControlador {
 
@@ -63,7 +63,7 @@ public class CampannaControlador {
 		return ResponseEntity.ok(servicios.datosCampannaById(idCampanna));
 	}
 
-	@CrossOrigin(origins="http://localhost:4200")
+	
 	@PostMapping("/add/to/{prop}")
     public ResponseEntity<Optional<Campanna>> addNewCampanna(@RequestBody Campanna newCampanna,@PathVariable int prop){
         

@@ -28,7 +28,7 @@ import com.dtr.agroBook.services.ExplotacionServicios;
  */
 
 @RestController
-@CrossOrigin(origins="http://localhost:4200", allowCredentials = "true")
+@CrossOrigin(origins="https://agrobook-f959a.web.app", allowCredentials = "true")
 @RequestMapping("/explotacion")
 public class ExplotacionControlador {
 
@@ -40,7 +40,6 @@ public class ExplotacionControlador {
 	
 	
 	@GetMapping("/all")
-	@CrossOrigin(origins = "http://localhost:4200")
 	public ResponseEntity<Optional<List<Explotacion>>> listaExplotaciones() throws ExceptionModel {
 		
 		return ResponseEntity.ok(servicios.listaExplotaciones());
@@ -48,7 +47,6 @@ public class ExplotacionControlador {
 	
 	
 	@GetMapping("/data/id/{idExplotacion}")
-	@CrossOrigin(origins = "http://localhost:4200")
 	public ResponseEntity<Optional<Explotacion>> datosExplotacionById(@PathVariable int idExplotacion) throws ExceptionModel {
 		
 		return ResponseEntity.ok(servicios.datosExplotacionById(idExplotacion));
@@ -56,7 +54,6 @@ public class ExplotacionControlador {
 	
 	
 	@GetMapping("/data/nombre/{nombreExplotacion}")
-	@CrossOrigin(origins = "http://localhost:4200")
 	public ResponseEntity<Optional<Explotacion>> datosExplotacionByName(@PathVariable String nombreExplotacion) throws ExceptionModel {
 		
 		return ResponseEntity.ok(servicios.datosExplotacionByName(nombreExplotacion));
@@ -64,7 +61,6 @@ public class ExplotacionControlador {
 	
 	
 	@GetMapping("/porNombre/{nombre}")
-	@CrossOrigin(origins = "http://localhost:4200")
 	public ResponseEntity<Optional<List<Explotacion>>> listaExplotacionesByName(@PathVariable String nombre) throws ExceptionModel {
 		
 		return ResponseEntity.ok(servicios.listaExplotacionesByName(nombre));
@@ -72,7 +68,6 @@ public class ExplotacionControlador {
 	
 		
 	@PostMapping("/log")
-	@CrossOrigin(origins = "http://localhost:4200")
 	public ResponseEntity<Optional<Explotacion>> loggin(@RequestParam String nombre, @RequestParam String key) throws ExceptionModel {
 		
 		return ResponseEntity.ok(servicios.loggin(nombre, key));
@@ -80,7 +75,6 @@ public class ExplotacionControlador {
 	
 	
 	@PostMapping("/add")
-	@CrossOrigin(origins = "http://localhost:4200")
     public ResponseEntity<Optional<Explotacion>> addNewExplotacion(@RequestBody Explotacion newExplotacion){
         
         return ResponseEntity.ok(servicios.addNewExplotacion(newExplotacion)); 
@@ -88,7 +82,6 @@ public class ExplotacionControlador {
 	
 	
 	@PatchMapping("/modificar")
-	@CrossOrigin(origins = "http://localhost:4200")
     public ResponseEntity<Optional<Explotacion>> modExplotacion(@RequestBody Explotacion newExplotacion){
         
         return ResponseEntity.ok(servicios.modExplotacion(newExplotacion)); 
@@ -96,7 +89,6 @@ public class ExplotacionControlador {
 	
 	
 	@DeleteMapping("/drop/{idExplotacion}")
-	@CrossOrigin(origins = "http://localhost:4200")
 	public ResponseEntity<String> dropExplotacion(@PathVariable int idExplotacion){
         
         return ResponseEntity.ok(servicios.dropExplotacion(idExplotacion)); 

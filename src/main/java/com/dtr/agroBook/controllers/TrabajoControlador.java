@@ -27,7 +27,7 @@ import com.dtr.agroBook.services.TrabajoServicio;
  *
  */
 @RestController
-@CrossOrigin(origins="http://localhost:4200")
+@CrossOrigin(origins="https://agrobook-f959a.web.app")
 @RequestMapping("/trabajo")
 public class TrabajoControlador {
 

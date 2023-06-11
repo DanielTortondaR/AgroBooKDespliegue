@@ -27,7 +27,7 @@ import com.dtr.agroBook.services.FaenaServicios;
  */
 
 @RestController
-@CrossOrigin(origins="http://localhost:4200")
+@CrossOrigin(origins="https://agrobook-f959a.web.app")
 @RequestMapping("/faena")
 public class FaenaControlador {
 

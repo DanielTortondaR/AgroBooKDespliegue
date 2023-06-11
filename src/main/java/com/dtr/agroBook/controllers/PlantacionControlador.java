@@ -28,7 +28,7 @@ import com.dtr.agroBook.services.PlantacionServicios;
  */
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://agrobook-f959a.web.app")
 @RequestMapping("/plantacion")
 public class PlantacionControlador {
 	

@@ -28,7 +28,7 @@ import com.dtr.agroBook.services.FincaServicios;
  */
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://agrobook-f959a.web.app")
 @RequestMapping("/finca")
 public class FincaControlador {
 
@@ -39,7 +39,6 @@ public class FincaControlador {
 	
 	
 	@GetMapping("/all") 
-	@CrossOrigin(origins = "http://localhost:4200")
 	public ResponseEntity<Optional<List<Finca>>> listaExplotaciones() throws ExceptionModel {
 		
 		return ResponseEntity.ok(servicios.listaFincasAll());
@@ -47,7 +46,6 @@ public class FincaControlador {
 	
 	
 	@GetMapping("/propietario/{explotacion}")
-	@CrossOrigin(origins = "http://localhost:4200")
 	public ResponseEntity<Optional<List<Finca>>> datosExplotacionByProp(@PathVariable int explotacion) throws ExceptionModel {
 		
 		return ResponseEntity.ok(servicios.listaFincasPropietario(explotacion));
@@ -55,7 +53,6 @@ public class FincaControlador {
 	
 	
 	@GetMapping("/data/id/{idFinca}")
-	@CrossOrigin(origins = "http://localhost:4200")
 	public ResponseEntity<Optional<Finca>> datosExplotacionById(@PathVariable int idFinca) throws ExceptionModel {
 		
 		return ResponseEntity.ok(servicios.datosFincaById(idFinca));
@@ -63,14 +60,12 @@ public class FincaControlador {
 	
 	
 	@GetMapping("/porNombre/{nombreFinca}/{id}")
-	@CrossOrigin(origins = "http://localhost:4200")
 	public ResponseEntity<Optional<List<Finca>>> listaExplotacionesByName(@PathVariable String nombreFinca, @PathVariable int id) throws ExceptionModel {
 		
 		return ResponseEntity.ok(servicios.datosFincaByName(nombreFinca, id));
 	}
 	
 	@GetMapping("/porNombreStrict/{nombreFinca}/{id}")
-	@CrossOrigin(origins = "http://localhost:4200")
 	public ResponseEntity<Optional<Finca>> listaExplotacionesByNameStrict(@PathVariable String nombreFinca, @PathVariable int id) throws ExceptionModel {
 		
 		return ResponseEntity.ok(servicios.datosFincaByNameStrict(nombreFinca, id));
@@ -78,7 +73,6 @@ public class FincaControlador {
 
 	
 	@PostMapping("/add/{prop}")
-	@CrossOrigin(origins = "http://localhost:4200")
     public ResponseEntity<Optional<Finca>> addNewFinca(@RequestBody Finca newFinca,@PathVariable int prop){
         
         return ResponseEntity.ok(servicios.addNewFinca(newFinca, prop )); 
@@ -86,7 +80,6 @@ public class FincaControlador {
 	
 	
 	@PatchMapping("/modicar")
-	@CrossOrigin(origins = "http://localhost:4200")
     public ResponseEntity<Optional<Finca>> modFinca(@RequestBody Finca newFinca){
         
         return ResponseEntity.ok(servicios.modFinca(newFinca)); 
@@ -94,7 +87,6 @@ public class FincaControlador {
 	
 	
 	@DeleteMapping("/drop/{idFinca}")
-	@CrossOrigin(origins = "http://localhost:4200")
 	public ResponseEntity<String> dropExplotacion(@PathVariable int idFinca){
         
         return ResponseEntity.ok(servicios.dropFinca(idFinca)); 

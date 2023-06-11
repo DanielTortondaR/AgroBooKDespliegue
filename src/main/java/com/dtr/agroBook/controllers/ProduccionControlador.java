@@ -28,7 +28,7 @@ import com.dtr.agroBook.services.ProduccionServicios;
  */
 
 @RestController
-@CrossOrigin(origins="http://localhost:4200")
+@CrossOrigin(origins="https://agrobook-f959a.web.app")
 @RequestMapping("/produccion")
 public class ProduccionControlador {
 
@@ -36,35 +36,35 @@ public class ProduccionControlador {
 	private ProduccionServicios servicios;
 	
 	
-	@CrossOrigin(origins="http://localhost:4200")
+	
 	@GetMapping("/all") 
 	public ResponseEntity<Optional<List<Produccion>>> listaProducciones() throws ExceptionModel {
 		
 		return ResponseEntity.ok(servicios.listaProduccionesAll());
 	}
 	
-	@CrossOrigin(origins="http://localhost:4200")
+	
 	@GetMapping("/finca/{idfinca}") 
 	public ResponseEntity<Optional<List<Produccion>>> produccionesPorFinca(@PathVariable int idfinca) throws ExceptionModel {
 		
 		return ResponseEntity.ok(servicios.produccionesPorFinca(idfinca));
 	}
 	
-	@CrossOrigin(origins="http://localhost:4200")
+	
 	@GetMapping("/propietario/{explotacion}") 
 	public ResponseEntity<Optional<List<Produccion>>> datosExplotacionByProp(@PathVariable int explotacion) throws ExceptionModel {
 		
 		return ResponseEntity.ok(servicios.listaProduccionesPorPropietario(explotacion));
 	}
 	
-	@CrossOrigin(origins="http://localhost:4200")
+	
 	@GetMapping("/data/id/{idProduccion}") 
 	public ResponseEntity<Optional<Produccion>> datosProduccionById(@PathVariable int idProduccion) throws ExceptionModel {
 		
 		return ResponseEntity.ok(servicios.datosProduccionById(idProduccion));
 	}
 
-	@CrossOrigin(origins="http://localhost:4200")
+	
 	@PostMapping("/add")
     public ResponseEntity<Optional<Produccion>> addNewProduccion(@RequestBody Produccion newProduccion){
         
@@ -72,14 +72,14 @@ public class ProduccionControlador {
     }
 	
 	
-	@CrossOrigin(origins="http://localhost:4200")
+	
 	@PatchMapping("/modicar")
     public ResponseEntity<Optional<Produccion>> modProduccion(@RequestBody Produccion newProduccion){
         
         return ResponseEntity.ok(servicios.modProduccion(newProduccion)); 
     }
 	
-	@CrossOrigin(origins="http://localhost:4200")
+	
 	@DeleteMapping("/drop/{idProduccion}")
 	public ResponseEntity<String> dropProduccion(@PathVariable int idProduccion){
         
